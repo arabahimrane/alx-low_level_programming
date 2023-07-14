@@ -10,7 +10,7 @@ int main(void) {
     for(bigletter = 'A'; bigletter <= 'Z'; bigletter++) {
       putchar(bigletter);
     }
-
+    putchar('$');
     putchar('\n');
 
     return 0;
