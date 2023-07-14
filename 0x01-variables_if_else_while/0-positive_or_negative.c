@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * Description: Prints a sentence indicating whether n is positive, negative, or neutral
+ * Description: Prints a sentence indicating whether n is positive, negative, or zero
  *
  * Return: Always 0 (Success)
  */
@@ -14,8 +14,8 @@ int main(void)
 	int n;
 
 	srand(time(0));
-       n = rand() - RAND_MAX / 2;
-	/* your code goes there */
+	n = rand() - RAND_MAX / 2;
+
 	if (n < 0)
 	{
 		printf("%d is %s\n", n, "negative");
@@ -28,5 +28,6 @@ int main(void)
 	{
 		printf("%d is %s\n", n, "zero");
 	}
+
 	return (0);
 }
