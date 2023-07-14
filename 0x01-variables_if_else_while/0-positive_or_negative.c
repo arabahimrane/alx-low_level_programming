@@ -3,6 +3,13 @@
 #include <time.h>
 /* more headers goes there */
 
+/**
+ * main - Entry point
+ *
+ * Description: print a sentence indicating whether n is positive, negative, or neutra
+ *
+ * Return: Always 0 (Success)
+ */
 /* betty style doc for function main goes there */
 int main(void)
 {
