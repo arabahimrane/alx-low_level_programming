@@ -5,7 +5,8 @@
 /**
  * main - Entry point
  *
- * greater than or less than 5, or is zero..
+ * Description: Prints the last digit of a random number
+ *              and provides additional information
  *
  * Return: Always 0 (Success)
  */
@@ -32,6 +33,7 @@ int main(void)
     {
         info = "and is less than 6 and not 0";
     }
+
     printf("Last digit of %d is %d %s\n", n, lastDigit, info);
 
     return (0);
