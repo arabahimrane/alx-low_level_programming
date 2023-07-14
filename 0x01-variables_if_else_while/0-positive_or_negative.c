@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * Description: Prints a sentence indicating whether n is positive, negative, or zero
+ * Description: Prints is positive, negative, or zero
  *
  * Return: Always 0 (Success)
  */
