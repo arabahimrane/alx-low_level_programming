@@ -19,8 +19,7 @@ int main(void)
 	for (bigLetter = 'A'; bigLetter <= 'Z'; bigLetter++)
 		putchar(bigLetter);
 
-	putchar('$');
-	putchar('\n');
+	putchar('$' '\n');
 
 	return (0);
 }
