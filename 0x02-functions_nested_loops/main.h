@@ -1,4 +1,4 @@
-#ifndef MAIN_H  // Include guards to prevent multiple inclusions
+#ifndef MAIN_H
 #define MAIN_H
 
 void print();
