@@ -1,12 +1,21 @@
 #include <stdio.h>
+#include "main.h"
 
-#include "main.h" 
-
-void print() {
+/**
+ * print - Prints "_putchar" to the standard output.
+ */
+void print(void)
+{
     printf("_putchar\n");
 }
 
-int main() {
-    print(); 
+/**
+ * main - Entry point of the program.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    print();
     return 0;
 }
