@@ -3,7 +3,7 @@
 #include "main.h" 
 
 void print() {
-    printf("_putchar");
+    printf("_putchar\n");
 }
 
 int main() {
