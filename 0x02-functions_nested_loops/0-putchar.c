@@ -1,15 +1,12 @@
-#include "main.h"
+#include <stdio.h>  // Include the necessary header files
+
+#include "main.h"  // Include the custom header file
+
+void print() {
+    printf("Hello, World!\n");
+}
 
 int main() {
-    _putchar('_');
-    _putchar('p');
-    _putchar('u');
-    _putchar('t');
-    _putchar('c');
-    _putchar('h');
-    _putchar('a');
-    _putchar('r');
-    _putchar('\n');
-
+    print();  // Call the function to print "Hello, World!"
     return 0;
 }
