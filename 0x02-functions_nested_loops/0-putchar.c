@@ -17,5 +17,5 @@ void print(void)
 int main(void)
 {
 	print();
-	return 0;
+	return (0);
 }
