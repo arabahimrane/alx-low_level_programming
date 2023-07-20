@@ -13,7 +13,6 @@ int main(void)
 
 	i = 0;
 	/**
-	 *
 	 * section : this is error cause
 	 * while (i < 10)
 	 * {
