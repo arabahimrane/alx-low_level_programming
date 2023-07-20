@@ -1,47 +1,22 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * _putnbr - Print nbr.
- * @nbr:nbr to print.
- */
-void _putnbr(int nbr)
-{
-	int i;
-
-	i = 10;
-	if (nbr < 0)
-	{
-		_putchar('-');
-		nbr = -nbr;
-	}
-	while (nbr / i)
-		i = i * 10;
-	i = i / 10;
-	while (i > 1)
-	{
-		_putchar((nbr / i) + '0');
-		nbr = nbr % i;
-		i = i / 10;
-	}
-	_putchar(nbr + '0');
-}
-
-/**
- * print_to_98 - Print nbr to 98.
- * @n: start from nbr.
+ * print_to_98 - Prints all natural numbers from n to 98, separated by a comma and space.
+ * @n: The starting number.
  */
 void print_to_98(int n)
 {
-	while (n != 98)
+	if (n < 98)
 	{
-		_putnbr(n);
-		if (n != 98)
-		{
-			_putchar(',');
-			_putchar(' ');
-		}
-		(n > 98) ? n-- : n++;
+		for (n = n; n < 98; n++)
+			printf("%d, ", n);
+		printf("%d\n", 98);
 	}
-	_putnbr(98);
-	_putchar('\n');
+	else
+	{
+		for (n = n; n > 98; n--)
+			printf("%d, ", n);
+		printf("%d\n", 98);
+	}
 }
