@@ -1,19 +1,49 @@
-#include <stdio.h>
+#include "main.h"
+/**
+ * _putnbr - Print nbr.
+ * @nbr:nbr to print.
+ */
+void _putnbr(int nbr)
+{
+	int i;
+
+	i = 10;
+	if (nbr < 0)
+	{
+		_putchar('-');
+		nbr = -nbr;
+	}
+	while (nbr / i)
+		i = i * 10;
+	i = i / 10;
+	while (i > 1)
+	{
+		_putchar((nbr / i) + '0');
+		nbr = nbr % i;
+		i = i / 10;
+	}
+	_putchar(nbr + '0');
+}
 
 /**
- * sum_multiples - Computes the sum of all multiples of 3 or 5 below a given limit.
- * @limit: The limit below which to find multiples.
+ * main - Print sum of 1024
  *
- * Return: The sum of all multiples of 3 or 5 below the limit.
+ * Return: On success 0.
  */
 int main(void)
 {
-	int i, res;
+	int i;
+	int sum;
 
-	for (i = 0; i < 1024; i++)
-		if (i % 3 == 0 || i % 5 == 0)
-			res += i;
-	printf("%d\n", res);
+	i = 0;
+	sum = 0;
+	while (i < 1024)
+	{
+		if (i % 5 == 0 || i % 3 == 0)
+			sum += i;
+		i++;
+	}
+	_putnbr(sum);
+	_putchar('\n');
 	return (0);
 }
-
