@@ -7,23 +7,22 @@
  */
 int main(void)
 {
+	unsigned long count, i, j, k;
 
-	int fib[50];
-	int i;
-
-	fib[0] = 1; 
-	fib[1] = 2; 
-
-	for (i = 2; i < 50; i++)
-	  {
-	    fib[i] = fib[i - 1] + fib[i - 2];
-	  }
-	for (i = 0; i < 49; i++)
-	  {
-	    printf("%d, ", fib[i]);
-          }
-
-	printf("%d\n", fib[49]);
-
+	i = 0;
+	j = 1;
+	for (count = 0; count < 50; count++)
+	{
+		k = i + j;
+		i = j;
+		j = k;
+		printf("%lu", k);
+		if (count == 49)
+			putchar('\n');
+		else
+		{
+			printf(", ");
+		}
+	}
 	return (0);
 }
