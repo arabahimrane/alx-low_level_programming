@@ -10,24 +10,23 @@
  */
 int main(void)
 {
-	int pass[100];
-	int i, sum, n;
-	
+	int password[69];
+	int i;
+	int sum;
+
 	sum = 0;
-
+	i = -1;	
 	srand(time(NULL));
-	for(i = 0; i<100; i+++;){
-	  pass[i] = rand() % 78;
-	  sum += (pass[i] + '0');
-	  putchar(pass[pass[i] + '0');
-		  if((2772 - sum) - '0' <78)
-		    {
-		      n = 2772 -sum -'0';
-		      sum += n;
-		      putchar(n +'0');
-		      break;
-		    }
+	while (++i <= 69)
+	{
+		password[i] = rand() % 126;
+		sum += (password[i] + '0');
+		putchar(password[i] + '0');
+		if ((2772 - sum) - '0' < 78)
+		{
+			putchar(2772 - sum);
+			return (0);
+		}
 	}
-
 	return (0);
 }
