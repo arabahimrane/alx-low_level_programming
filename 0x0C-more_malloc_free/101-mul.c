@@ -1,106 +1,68 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
-
+#include <stdio.h>
 /**
-* _puts - prints a string.
-* @str: string to print.
-*
-* Description: unction that prints a string, followed by a new line, to stdout.
-*/
-void _puts(char *str)
-{
-	while (*str)
-	{
-		_putchar(*str++);
-	}
-	_putchar('\n');
-}
-
-/**
- * _strlen - length of str
- * @str: str argument
- *
- * Description: func calc lenth of str
- * Return: On success a nbr. else 0
- */
-int _strlen(char *str)
+  * _isdigit - tells if the string consists of digits
+  * @argv: pointer to current item in argument
+  * Return: return 0 if all digits, 1 if not all digits.
+  */
+int _isdigit(char *argv)
 {
 	int i;
 
 	i = 0;
-	while (str[i])
+	while (argv[i])
+	{
+		if (argv[i] >= '0' && argv[i] <= '9')
+			i++;
+		else
+			return (1);
+	}
+	return (0);
+}
+/**
+  * _atoi - converts a string of ascii digits to the values they represent
+  * @s: pointer to the source string
+  * Return: value of digits
+  */
+int _atoi(char *s)
+{
+	int i, result;
+
+	i = result = 0;
+	while (s[i])
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			result *= 10;
+			result += (s[i] - '0');
+		}
 		i++;
-	return (i);
-}
-
-
-/**
- * _isnum - checks digit or not
- * @str: str argument
- *
- * Description:  checks for alphabetic character.
- * Return: On success 1. else -1
- */
-int _isnum(char *str)
-{
-	while (*str)
-	{
-		if (*str < '0' || *str > '9')
-			return (0);
-		str++;
 	}
-	return (1);
+	return (result);
 }
-
 /**
- * main - mult func.
- * @ac: argument count
- * @av: argument vector
- *
- * Description: program that multiplies two positive numbers.
- * Return: success 0 or 98
- */
-int main(int ac, char **av)
+  * main - main function call
+  * @argc: argument count
+  * @argv: 2D array of arguments
+  * Return: return 0 on success, 98 on failure
+  */
+int main(int argc, char *argv[])
 {
-	int *res;
 	int i;
-	int j;
-	int next;
 
-	i = 0;
-	if (ac != 3 || !_isnum(av[1]) || !_isnum(av[2]))
+	malloc();
+	if (argc != 3)
 	{
-		_puts("Error");
+		printf("Error\n");
 		exit(98);
 	}
-	res = malloc(_strlen(av[1]) + _strlen(av[2]) + 1);
-	if (!res)
-		return (0);
-	while (i <= (_strlen(av[1]) + _strlen(av[2])))
-		res[i++] = 0;
-	for (i = _strlen(av[1]) - 1; i >= 0; i--)
+	for (i = 1; i < argc; i++)
 	{
-		next = 0;
-		for (j = _strlen(av[2]) - 1; j >= 0; j--)
+		if (_isdigit(argv[i]))
 		{
-			next += res[i + j + 1] +  (av[1][i] - '0') * (av[2][j] - '0');
-			res[i + j + 1] = next % 10;
-			next /= 10;
+			printf("Error\n");
+			exit(98);
 		}
-		if (next > 0)
-			res[i + j + 1] += next;
 	}
-	j = 0;
-	while (j < (_strlen(av[1]) + _strlen(av[2])) && res[j] == 0)
-		j++;
-	while (j < (_strlen(av[1]) + _strlen(av[2])))
-	{
-		_putchar(res[j++] + '0');
-	}
-	if (j == (_strlen(av[1]) + _strlen(av[2])))
-		_putchar('0');
-	_putchar('\n');
-	free(res);
 	return (0);
 }
